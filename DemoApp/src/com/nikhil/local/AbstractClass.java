@@ -1,4 +1,4 @@
-package com.nikhil.main;
+package com.nikhil.local;
 
 
 abstract class Loan{
