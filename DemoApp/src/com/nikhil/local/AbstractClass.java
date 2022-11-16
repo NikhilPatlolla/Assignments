@@ -5,6 +5,10 @@ abstract class Loan{
 	public abstract void interestRate();
 }
 
+interface SBILoan{
+	void interest();
+	void maxInterestRate();
+}
 
 public class AbstractClass {
 	public static void main(String[] args) {
@@ -15,6 +19,23 @@ public class AbstractClass {
 			}
 		};
 		
+		
+		SBILoan sbiLoan = new SBILoan() {
+
+			@Override
+			public void interest() {
+				System.out.println("10%");
+			}
+
+			@Override
+			public void maxInterestRate() {
+				System.out.println("Max is about 43%");
+			}
+			
+		};
+		
 		loan.interestRate();
+		sbiLoan.interest();
+		sbiLoan.maxInterestRate();
 	}
 }
