@@ -47,6 +47,14 @@ class Player {
 
 		return guessNum;
 	}
+
+	int guessOnlyNo() {
+		Scanner scan = new Scanner(System.in);
+		System.out.println(playername + ", kindly guess the number");
+		guessNum = scan.nextInt();
+
+		return guessNum;
+	}
 }
 
 class Umpire {
@@ -66,13 +74,21 @@ class Umpire {
 	}
 
 	void collectNumFromPlayers() {
-		p1 = new Player();
-		p2 = new Player();
-		p3 = new Player();
+		// if the players have already given their name, they need not give the name
+		// again unless the game is started again.
+		if (p1 != null || p2 != null || p3 != null) {
+			numFromPlayer1 = p1.guessOnlyNo();
+			numFromPlayer2 = p2.guessOnlyNo();
+			numFromPlayer3 = p3.guessOnlyNo();
+		} else {
+			p1 = new Player();
+			p2 = new Player();
+			p3 = new Player();
 
-		numFromPlayer1 = p1.guessNum();
-		numFromPlayer2 = p2.guessNum();
-		numFromPlayer3 = p3.guessNum();
+			numFromPlayer1 = p1.guessNum();
+			numFromPlayer2 = p2.guessNum();
+			numFromPlayer3 = p3.guessNum();
+		}
 
 	}
 
@@ -134,9 +150,9 @@ class Umpire {
 				playing = false;
 				String gameTimes = (gameCount == 1) ? "time" : "times";
 				String wonTimes = (wonCount == 1) ? "time" : "times";
+				System.out.println("Thank you for playing the game for " + gameCount + " " + gameTimes);
 				System.out.println("you have played the game for " + gameCount + " " + gameTimes + " and all won "
 						+ wonCount + " " + wonTimes);
-				System.out.println("Thank you for playing the game for " + gameCount + " " + gameTimes);
 			}
 		}
 	}
