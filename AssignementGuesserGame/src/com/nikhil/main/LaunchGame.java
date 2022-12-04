@@ -19,9 +19,9 @@ class Guesser {
 			if (guessNumMaxLim >= guessNumMinLim) {
 				valid = false;
 
-				// randomly selects the no, between your lower and the upper limit
+				// randomly selects the no, between your lower and the upper limit, so that the guesser also doesn't know the no. 
 				guessNo = (int) (Math.random() * (guessNumMaxLim - guessNumMinLim + 1) + guessNumMinLim);
-				System.out.println(guessNo);
+//				System.out.println(guessNo);
 				return guessNo;
 
 			} else {
