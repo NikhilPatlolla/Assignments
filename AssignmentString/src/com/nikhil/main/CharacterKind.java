@@ -33,7 +33,7 @@ public class CharacterKind {
 		
 		System.out.println("The no. vowels are: "+ vowels);
 		System.out.println("The no. consonants are: "+ consonants);
-		System.out.println("The no. vowels are: "+ specialCharacters);
+		System.out.println("The no. specialCharacters are: "+ specialCharacters);
 		
 	}
 }
